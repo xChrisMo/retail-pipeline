@@ -42,6 +42,9 @@ Defaults live in `src/pipeline/config.py`. Update the path or threshold variable
 - Automated checks and handling described in `docs/data_quality.md`.
 - Column-level definitions in `docs/data_dictionary.md`.
 
+## Pipeline Overview
+![Pipeline diagram](docs/images/pipeline.png)
+
 ## Deliverables Summary
 - Code (Python pipeline package)
 - SQL scripts (`sql/create_tables.sql`)
