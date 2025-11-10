@@ -43,19 +43,7 @@ Defaults live in `src/pipeline/config.py`. Update the path or threshold variable
 - Column-level definitions in `docs/data_dictionary.md`.
 
 ## Pipeline Overview
-```mermaid
-flowchart LR
-    raw[Raw Data<br/>Excel (Online Retail)] --> extract[`extract_transactions`]
-    extract --> transform[`enrich_transactions`]
-    transform --> model[`build_star_schema`]
-    model --> persist[Parquet Outputs]
-    model --> quality[`run_quality_checks`]
-    quality --> log[`pipeline.log`]
-    extract --> log
-    transform --> log
-    model --> log
-    persist --> log
-```
+![Pipeline diagram](docs/images/pipeline.png)
 
 ## Deliverables Summary
 - Code (Python pipeline package)
