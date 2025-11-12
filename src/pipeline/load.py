@@ -6,7 +6,6 @@ from .config import ensure_output_paths, marts_path, staging_path
 
 
 def persist_tables(tables):
-    """Storing each table to Parquet."""
     output_paths = {}
 
     ensure_output_paths()

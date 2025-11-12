@@ -6,7 +6,6 @@ from .config import chunk_size, raw_input_path
 
 
 def extract_transactions() -> pd.DataFrame:
-    """Read the raw Excel file."""
     input_path = raw_input_path
 
     if not input_path.exists():

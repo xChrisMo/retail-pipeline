@@ -11,7 +11,7 @@ Use these examples for screenshots or appendix materials:
 
 2. **Log Snippet**
    ```bash
-   tail -n 20 pipeline.log
+   tail -n 5 pipeline.log
    ```
    Highlight transformation stats and quality check summary.
 
@@ -21,13 +21,7 @@ Use these examples for screenshots or appendix materials:
    df = pd.read_parquet("models/marts/fact_sales.parquet")
    df.head()
    ```
-   Screenshot the first few rows to demonstrate schema.
+   You can then see the first few rows to the parquet file.
 
-4. **Quality Results Summary**
-   ```python
-   from src.pipeline.run import run_pipeline
-   run_pipeline()
-   ```
-   Capture returned `run_stats` and `quality_results` dictionary from an interactive session.
 
 

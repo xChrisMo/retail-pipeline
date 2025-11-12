@@ -1,14 +1,14 @@
-2025-11-10 11:03:01,747 [INFO] __main__ - Starting Online Retail pipeline
-2025-11-10 11:03:01,747 [INFO] __main__ - Configuration: input=data/Online Retail.xlsx staging=models/staging marts=models/marts min_quantity=1 min_unit_price=0.01 chunk_size=None
-2025-11-10 11:03:18,155 [INFO] __main__ - Extracted 541909 rows from raw dataset
-2025-11-10 11:03:18,421 [INFO] __main__ - Transformation stats: {'initial_rows': 541909, 'missing_customer': 135080, 'bad_quantity': 8905, 'bad_unit_price': 44, 'invalid_invoice_date': 0, 'rows_retained': 397880}
-2025-11-10 11:03:20,014 [INFO] __main__ - Table fact_sales has 397880 rows
-2025-11-10 11:03:20,014 [INFO] __main__ - Table dim_customer has 4346 rows
-2025-11-10 11:03:20,014 [INFO] __main__ - Table dim_product has 8879 rows
-2025-11-10 11:03:20,014 [INFO] __main__ - Table dim_date has 17282 rows
-2025-11-10 11:03:20,223 [INFO] __main__ - Persisted tables to disk: {'fact_sales': PosixPath('models/marts/fact_sales.parquet'), 'dim_customer': PosixPath('models/staging/dim_customer.parquet'), 'dim_product': PosixPath('models/staging/dim_product.parquet'), 'dim_date': PosixPath('models/staging/dim_date.parquet')}
-2025-11-10 11:03:20,354 [INFO] __main__ - Quality check FactSalesQuantityPositive: True ({'rows_with_bad_quantity': 0})
-2025-11-10 11:03:20,354 [INFO] __main__ - Quality check FactSalesUnitPricePositive: True ({'rows_with_bad_price': 0})
-2025-11-10 11:03:20,354 [INFO] __main__ - Quality check FactSalesCustomerExists: True ({'missing_customer_keys': 0})
-2025-11-10 11:03:20,354 [INFO] __main__ - Quality check FactSalesProductExists: True ({'missing_product_keys': 0})
-2025-11-10 11:03:20,354 [INFO] __main__ - Quality check FactSalesInvoiceLineUnique: True ({'duplicate_lines': 0})
+2025-11-12 16:36:10,985 [INFO] __main__ - Starting Online Retail pipeline
+2025-11-12 16:36:10,985 [INFO] __main__ - Configuration: input=data/Online Retail.xlsx staging=models/staging marts=models/marts min_quantity=1 min_unit_price=0.01 chunk_size=None
+2025-11-12 16:36:26,835 [INFO] __main__ - Extracted 541909 rows from raw dataset
+2025-11-12 16:36:27,174 [INFO] __main__ - Transformation stats: {'initial_rows': 541909, 'missing_customer': 135080, 'bad_quantity': 8905, 'bad_unit_price': 44, 'invalid_invoice_date': 0, 'rows_retained': 397880}
+2025-11-12 16:36:28,644 [INFO] __main__ - Table fact_sales has 397880 rows
+2025-11-12 16:36:28,644 [INFO] __main__ - Table dim_customer has 4346 rows
+2025-11-12 16:36:28,644 [INFO] __main__ - Table dim_product has 8879 rows
+2025-11-12 16:36:28,644 [INFO] __main__ - Table dim_date has 17282 rows
+2025-11-12 16:36:28,849 [INFO] __main__ - Persisted tables to disk: {'fact_sales': PosixPath('models/marts/fact_sales.parquet'), 'dim_customer': PosixPath('models/staging/dim_customer.parquet'), 'dim_product': PosixPath('models/staging/dim_product.parquet'), 'dim_date': PosixPath('models/staging/dim_date.parquet')}
+2025-11-12 16:36:28,930 [INFO] __main__ - Quality check FactSalesQuantityPositive: True ({'rows_with_bad_quantity': 0})
+2025-11-12 16:36:28,930 [INFO] __main__ - Quality check FactSalesUnitPricePositive: True ({'rows_with_bad_price': 0})
+2025-11-12 16:36:28,930 [INFO] __main__ - Quality check FactSalesCustomerExists: True ({'missing_customer_keys': 0})
+2025-11-12 16:36:28,930 [INFO] __main__ - Quality check FactSalesProductExists: True ({'missing_product_keys': 0})
+2025-11-12 16:36:28,930 [INFO] __main__ - Quality check FactSalesInvoiceLineUnique: True ({'duplicate_lines': 0})

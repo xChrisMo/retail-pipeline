@@ -28,7 +28,6 @@ def _configure_logging(log_path: Path) -> None:
 
 
 def run_pipeline() -> Dict[str, object]:
-    """Run the pipeline end to end."""
     project_root = Path.cwd()
     log_path = project_root / "pipeline.log"
     _configure_logging(log_path)

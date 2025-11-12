@@ -21,11 +21,12 @@ class QualityResult:
 
 
 def run_quality_checks(tables: Dict[str, pd.DataFrame]) -> List[QualityResult]:
-    """Run value, key, and uniqueness checks."""
+    """Helper function to run quality checks using the QualityResult classs"""
+    
     results: List[QualityResult] = []
     fact = tables["fact_sales"]
 
-    # Quantity and UnitPrice ranges
+    # Quantity and UnitPrice quality checks
     bad_quantity = int((fact["Quantity"] <= 0).sum())
     results.append(
         QualityResult(
@@ -44,7 +45,7 @@ def run_quality_checks(tables: Dict[str, pd.DataFrame]) -> List[QualityResult]:
         )
     )
 
-    # Referential integrity: Customer dimension
+    # DOing specific referential checks: Customer dimension
     customer_keys = tables["dim_customer"]["CustomerKey"]
     missing_customers = int((~fact["CustomerID"].isin(customer_keys)).sum())
     results.append(
@@ -55,7 +56,7 @@ def run_quality_checks(tables: Dict[str, pd.DataFrame]) -> List[QualityResult]:
         )
     )
 
-    # Referential integrity: Product dimension
+    # Product dimension now
     product_keys = tables["dim_product"]["ProductKey"]
     missing_products = int((~fact["StockCode"].isin(product_keys)).sum())
     results.append(

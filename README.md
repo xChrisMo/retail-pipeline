@@ -53,8 +53,8 @@ Defaults live in `src/pipeline/config.py`. Update the path or threshold variable
 - Screenshots/sample outputs (capture `pipeline.log`, parquet previews)
 
 ## Assumptions & Future Work
-- Dropped transactions with missing customers or non-positive quantities/prices.
+- Dropped transactions with missing customers, non-positive quantities and also prices.
 - Treated latest observed `UnitPrice` as product attribute; no product hierarchy provided.
-- Potential enhancements: orchestrate with Airflow/Prefect, migrate transformations to dbt, expand data quality checks with Great Expectations, add unit tests.
+- Potential enhancements: orchestrate with Airflow (a backfill), migrate transformations to dbt, expand data quality checks with Great Expectations, add unittests.
 
 

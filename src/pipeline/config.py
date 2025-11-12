@@ -1,5 +1,5 @@
 from pathlib import Path
-"""Simple configuration values for the pipeline."""
+"""All the configuration pahts, values for our pipeline."""
 
 raw_input_path = Path("data/Online Retail.xlsx")
 staging_path = Path("models/staging")
