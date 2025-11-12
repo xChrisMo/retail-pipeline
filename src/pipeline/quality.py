@@ -21,9 +21,9 @@ class QualityResult:
 
 
 def run_quality_checks(tables: Dict[str, pd.DataFrame]) -> List[QualityResult]:
-    """Helper function to run quality checks using the QualityResult classs"""
+    """Helper function to SEQUENTIALLY run quality checks using the QualityResult classs"""
     
-    results: List[QualityResult] = []
+    results = []
     fact = tables["fact_sales"]
 
     # Quantity and UnitPrice quality checks
@@ -45,7 +45,8 @@ def run_quality_checks(tables: Dict[str, pd.DataFrame]) -> List[QualityResult]:
         )
     )
 
-    # DOing specific referential checks: Customer dimension
+    # DOing specific referential checks
+    # Customer dimension first
     customer_keys = tables["dim_customer"]["CustomerKey"]
     missing_customers = int((~fact["CustomerID"].isin(customer_keys)).sum())
     results.append(

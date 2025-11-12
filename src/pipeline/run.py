@@ -43,19 +43,24 @@ def run_pipeline() -> Dict[str, object]:
         chunk_size,
     )
 
+    #export
     raw_df = extract_transactions()
     LOGGER.info("Extracted %s rows from raw dataset", len(raw_df))
 
+    #transform
     clean_df, stats = enrich_transactions(raw_df)
     LOGGER.info("Transformation stats: %s", stats)
 
+    #model
     tables = build_star_schema(clean_df)
     for name, df in tables.items():
         LOGGER.info("Table %s has %s rows", name, len(df))
 
+    #¢load
     outputs = persist_tables(tables)
     LOGGER.info("Persisted tables to disk: %s", outputs)
 
+    #quality tests
     quality_results = run_quality_checks(tables)
     failed_checks = [result for result in quality_results if not result.passed]
     for result in quality_results:

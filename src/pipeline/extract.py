@@ -6,7 +6,7 @@ from .config import chunk_size, raw_input_path
 
 
 def extract_transactions() -> pd.DataFrame:
-    input_path = raw_input_path
+    input_path = raw_input_path # this is the path to the raw input file
 
     if not input_path.exists():
         raise FileNotFoundError(f"Expected raw input file at {input_path} but it was not found.")
