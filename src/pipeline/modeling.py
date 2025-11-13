@@ -18,6 +18,7 @@ def build_star_schema(clean_df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
             "LineTotal",
         ]
     ].copy()
+    #creating a primary key for the facts table
     fact_sales["InvoiceLineId"] = fact_sales.apply(
         lambda row: f"{row['InvoiceNo']}-{row.name}", axis=1
     )

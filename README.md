@@ -7,7 +7,7 @@ This repository implements a data engineering pipeline for the UCI "Online Retai
 - `Assessment.ipynb` - initial data profiling and exploration.
 - `src/pipeline/` - Python package orchestrating extraction, transformation, modeling, loading, and quality checks.
 - `models/` - generated parquet outputs (`marts` for fact tables, `staging` for dimensions).
-- `docs/` - data model, data quality notes, data dictionary, architecture diagram, presentation outline.
+- `docs/` - data model, data quality notes, data dictionary, architecture diagram, presentation deck (`FOILPresentation.pdf`), and presentation outline.
 - `sql/` - DDL scripts for the final schema.
 - `requirements.txt` - Python dependencies.
 
@@ -49,7 +49,7 @@ Defaults live in `src/pipeline/config.py`. Update the path or threshold variable
 - Code (Python pipeline package)
 - SQL scripts (`sql/create_tables.sql`)
 - Documentation (`docs/*.md`, `README.md`, architecture diagram)
-- Presentation deck (see outline in `docs/presentation_outline.md`)
+- Presentation deck (`docs/FOILPresentation.pdf`) - 10-15 minute presentation covering design decisions, data quality approach, and analytical use cases
 - Screenshots/sample outputs (capture `pipeline.log`, parquet previews)
 
 ## Assumptions & Future Work
